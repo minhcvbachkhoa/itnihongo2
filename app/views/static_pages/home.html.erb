@@ -12,10 +12,11 @@
     </div>
   </div>
 <% else %>
-  <div class="center home">
+  <div class="center home jumbotron">
     <h1>
       <%= t "hello" %><br>
-      <%= t "nice-to" %>
+      <%= t "nice-to" %><br><br>
+      <%= link_to t("signup.sign-up"), sign_up_path, class: "btn btn-lg btn-primary" %>
     </h1>
   </div>
 <% end %>

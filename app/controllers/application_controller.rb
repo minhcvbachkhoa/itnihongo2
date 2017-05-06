@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
 
+  before_filter :set_global_search_variable
+
   private
   def logged_in_user
     unless logged_in?
@@ -11,8 +13,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def search
+  def set_global_search_variable
     @q = Image.search params[:q]
-    @images = @q.result(distinct: true).order_by_created_at.page params[:page]
   end
 end

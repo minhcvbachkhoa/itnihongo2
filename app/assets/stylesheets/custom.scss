@@ -67,9 +67,11 @@ p {
 .text-search {
   margin-left: 10px;
   margin-top: 10px;
+  border: 0px;
   #search {
+    border: 0px;
     margin: 0px;
-    width: 410px;
+    width: 430px;
     height: 30px !important;
     font-size: 1.5em;
   } 
@@ -77,17 +79,17 @@ p {
 }
 
 .search-button {
-  margin-left: 40px;
+  margin-left: 15px;
   margin-top: 10px;
-  width: 50px;
+  width: 35px;
   height: 30px;
-  background-color: $gray-medium-light;
-  .fa-search {
-    height: 50px;
-    width: 30px;
-    font-size: 25px;
-    padding-top: 2px;
-    padding-right: 10px;
+  input {
+    height: 30px !important;
+    width: 35px;
+    background-image: url("search_icon.png");
+    background-size: 35px 30px;
+    background-color: white;
+    border: 0px;
   }
 }
 
