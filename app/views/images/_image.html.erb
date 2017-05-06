@@ -1,0 +1,22 @@
+<li id="image-<%= image.id %>">
+  <%= link_to gravatar_for(image.user, size: 50), image.user %>
+  <span class="user"><%= link_to image.user.name, image.user %></span>
+  <span class="address">
+    <%= t "image.address" %> : <%= image.address %>
+    <%= link_to image_tag(image.image.large_size.url), image %>
+  </span>
+  <span class="category"><%= t "image.category" %> : 
+    <%= image.category.name %></span>
+  <span class="more"><%= t "image.description" %> : 
+    <%= image.description %></span>
+  <span class="timestamp">
+    <%= t "posted" %>
+    <%= time_ago_in_words image.created_at %>
+    <%= t "ago" %>
+    <% if image.user.current_user? current_user %>
+      <%= link_to t("action.edit"), edit_image_path(image) %> | 
+      <%= link_to t("action.delete"), image, method: :delete,
+        data: {confirm: t("you_sure")} %>
+    <% end %>
+  </span>
+</li>

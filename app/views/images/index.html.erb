@@ -1,0 +1,7 @@
+<% provide :title, t("action.search") %>
+<% if @images.any? %>
+  <ol class="images">
+    <%= render @images %>
+  </ol>
+  <%= will_paginate @images %>
+<% end %>

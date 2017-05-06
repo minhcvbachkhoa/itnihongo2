@@ -18,6 +18,21 @@ en:
   nice-to: お会い出来て嬉しいです
   news: "新しい"
   change_avatar: "変更アバター"
+  image:
+    address: "場所"
+    address-katakana: "アドレス"
+    category: "カテゴリー"
+    description: "説明"
+    image: "イメージ"
+    number-images: "写真数 : "
+    image-not-found: "Image not found !"
+    message:
+      success_created_image: "Image was successfully created !"
+      success_updated_image: "Image was successfully updated !"
+      success_deleted_image: "Image was successfully deleted !"
+      success_created_image_comment: "Image comment was successfully created !"
+      success_updated_image_comment: "Image comment was successfully updated !"
+      success_deleted_image_comment: "Image comment was successfully deleted !"
   signup:
     sign-up: サインアップ
   login:
@@ -37,13 +52,9 @@ en:
     show: "ショー"
     update: "アップデイト"
     upload: "アップロード"
+    search: "サーチ"
   user:
-    address: "場所"
-    address-katakana: "アドレス"
-    category: "カテゴリー"
-    description: "説明"
     edit-user: "更新ユーザー"
-    image: "イメージ"
     like-numbers: "好きな数"
     list-comments: "コメント一覧"
     list-images: "イメージ一覧"
@@ -54,9 +65,8 @@ en:
     setting: "セッティング"
     upload-by: "アップロード者"
     upload-image: "写真をアップロード"
+    update_image: "写真をアップデイト"
     users: "ユーザー"
-  help: "Help"
-  contact: "Contact"
   static_pages:
     about:
       _student_id: "学生番号: "
@@ -93,28 +103,21 @@ en:
         class: HEDSPI C K58
         university: ハノイ工科大学
         position: サブリーダー
-    contact:
-
-    help:
-      
     home:
 
   form_contain: "The form contains"
   error: "error"
-  user_not_found: "User not found"
+  user_not_found: "User not found !"
   sign_up_now: "Sign up now!"
-  error_login: "Invalid email/password combination"
+  error_login: "Invalid email/password combination !"
   save_changes: "Save changes"
   update_profile: "Update your profile"
-  profile_updated: "Profile updated"
-  please_log_in: "Please log in."
+  profile_updated: "Profile updated !"
+  please-log-in: "Please log in !"
   all_users: "All users"
   you_sure: "You sure?"
-  user_deleted: "User deleted"
-  message:
-    success_created_image: "Image was successfully created."
-    success_updated_image: "Image was successfully updated."
-    success_deleted_image: "Image was successfully deleted."
-    success_created_image_comment: "Image comment was successfully created."
-    success_updated_image_comment: "Image comment was successfully updated."
-    success_deleted_image_comment: "Image comment was successfully deleted."
+  user_deleted: "User deleted !"
+  posted: "Posted "
+  ago: " ago."
+  image-feed: "Image Feed"
+  warning-max-size: "should be less than 5MB"
