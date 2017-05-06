@@ -9,7 +9,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @images = @user.images.paginate(page: params[:page])
+    @images = @user.images.order_by_created_at.paginate page: params[:page]
+    @follow = current_user.active_relationships.build
+    @unfollow = current_user.active_relationships.find_by followed_id: @user.id
   end
 
   def new

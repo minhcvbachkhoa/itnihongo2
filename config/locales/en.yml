@@ -121,3 +121,8 @@ en:
   ago: " ago."
   image-feed: "Image Feed"
   warning-max-size: "should be less than 5MB"
+  following: "フォロウィング"
+  followers: "フォロワー"
+  unfollow: "Unfollow"
+  follow: "Follow"
+  link-error: "Link-error"

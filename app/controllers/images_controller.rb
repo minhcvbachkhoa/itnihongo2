@@ -3,10 +3,10 @@ class ImagesController < ApplicationController
   before_action :correct_user, only: [:destroy, :edit, :update]
 
   def index
-    unless params[:q].blank?
-      @images = Image.search_address params[:q][:address]
+    if params[:q].blank?
+      @images = current_user.feed.order_by_created_at.paginate page: params[:page]
     else
-      @images = Image.all.paginate(:page => params[:page])
+      @images = Image.search_address(params[:q][:address]).order_by_created_at
     end
   end
 

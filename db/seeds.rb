@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create! name: "カオ・ヴァン・ミン", email: "minhcv@gmail.com",
+User.create! name: "カオ・ヴァン・ミン", email: "minhcvbachkhoa@gmail.com",
   password: "minhcv", password_confirmation: "minhcv", admin: true
 
 User.create! name: "レー・タット・トゥン", email: "tunglt@gmail.com",
@@ -22,3 +22,9 @@ end
 Category.create!([{name: "山岳"}, {name: "洞窟"}, {name: "海"}])
 
 #image url : /uploads/image/image/3/anh-dep-thien-nhien-day-lang-man-1.jpg
+users = User.all
+user = users.first
+following = users[2..15]
+followers = users[3..10]
+following.each {|followed| user.follow followed}
+followers.each {|follower| follower.follow user}
