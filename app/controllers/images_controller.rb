@@ -1,9 +1,13 @@
 class ImagesController < ApplicationController
-  before_action :logged_in_user, expect: [:show, :index]
+  before_action :logged_in_user, except: [:show, :index]
   before_action :correct_user, only: [:destroy, :edit, :update]
 
   def index
-    @images = Image.all
+    unless params[:q].blank?
+      @images = Image.search_address params[:q][:address]
+    else
+      @images = Image.all.paginate(:page => params[:page])
+    end
   end
 
   def show
@@ -48,6 +52,11 @@ class ImagesController < ApplicationController
     @image.destroy
     flash[:success] = t "image.message.success_deleted_image"
     redirect_to root_url
+  end
+
+  def search
+    index
+    render :index
   end
 
   private

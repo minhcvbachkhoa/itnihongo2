@@ -30,6 +30,21 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function() {
+  $('.ui.search')
+  .search({
+    apiSettings: {
+      url: "//" + location.host + "/images?search={query}"
+    },
+    fields: {
+      results: 'images',
+      title: 'search_sugesstion',
+      url     : 'url'
+    },
+    minCharacters : 3
+  });
+});
+
 document.addEventListener('turbolinks:load', function() {
   $('#micropost_picture').bind('change', function() {
     var size_in_megabytes = this.files[0].size/1024/1024;
