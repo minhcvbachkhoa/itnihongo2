@@ -251,3 +251,95 @@ ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
   background-color: #fed136;
 }
+
+.images {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .address {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .category {
+    display: block;
+    margin-left: 60px;
+  }
+  .more {
+    display: block;
+    margin-left: 60px;
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.image {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+
+.form-image {
+  font-size: 2.0em;
+  
+  input.form-control {
+    height: 40px !important;
+    font-size: 1.2em;
+    margin-bottom: 30px !important;
+  }
+  select.form-control {
+    height: 40px !important;
+    font-weight: bolder;
+    font-size: 22px;
+    margin-bottom: 30px !important;
+  }
+
+  textarea.form-control {
+    height: 100px;
+    font-size: 20px;
+    margin-bottom: 30px !important;
+  }
+  #image-file {
+    border: 0;
+    font-size: 20px;
+    margin-bottom: 30px !important;
+  }
+}
+
+input.btn-lg {
+  width: 150px;
+  margin-left: 140px;
+}
+
+.morecontent span {
+    display: none;
+}
+.morelink {
+    display: block;
+}

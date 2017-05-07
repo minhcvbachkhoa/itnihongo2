@@ -5,13 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!(name: "Example User", email: "example@railstutorial.org",
-  password: "foobar", password_confirmation: "foobar", admin: true)
+User.create! name: "カオ・ヴァン・ミン", email: "minhcv@gmail.com",
+  password: "minhcv", password_confirmation: "minhcv", admin: true
 
-30.times do |n|
+User.create! name: "レー・タット・トゥン", email: "tunglt@gmail.com",
+  password: "tunglt", password_confirmation: "tunglt", admin: true
+
+20.times do |n|
   name = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
-  User.create!(name: name, email: email, password: password,
-    password_confirmation: password)
+  User.create! name: name, email: email, password: password,
+    password_confirmation: password
 end
+
+Category.create!([{name: "山岳"}, {name: "洞窟"}, {name: "海"}])
+
+#image url : /uploads/image/image/3/anh-dep-thien-nhien-day-lang-man-1.jpg

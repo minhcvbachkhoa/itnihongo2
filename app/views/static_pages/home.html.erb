@@ -1,7 +1,21 @@
 <% provide :title, t("home") %>
-<div class="center home">
-  <h1>
-    <%= t "hello" %><br>
-    <%= t "nice-to" %>
-  </h1>
-</div>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+      </section>
+      <section class="image_form">
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3><%= t "image-feed" %></h3>
+    </div>
+  </div>
+<% else %>
+  <div class="center home">
+    <h1>
+      <%= t "hello" %><br>
+      <%= t "nice-to" %>
+    </h1>
+  </div>
+<% end %>
