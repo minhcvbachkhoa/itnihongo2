@@ -8,10 +8,13 @@ Rails.application.routes.draw do
   post "/log_in", to: "sessions#create"
   delete "/log_out", to: "sessions#destroy"
   
-  resources :users
+  resources :users do
+    resources :relationships, only: :index
+  end
   resources :images do
     collection do
       match "search" => "images#search", via: [:get, :post], as: :search
     end
   end
+  resources :relationships, only: [:create, :destroy]
 end

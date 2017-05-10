@@ -4,12 +4,14 @@
   <span class="user"><%= link_to @image.user.name, @image.user %></span>
   <span class="address">
     <%= t "image.address" %> : <%= @image.address %>
-    <%= image_tag @image.image.larger_size.url %>
   </span>
   <span class="category"><%= t "image.category" %> : 
     <%= @image.category.name %></span>
   <span class="more"><%= t "image.description" %> : 
     <%= @image.description %></span>
+  <span class="address">
+    <%= image_tag @image.image.larger_size.url %>
+  </span>
   <span class="timestamp">
     <%= t "posted" %>
     <%= time_ago_in_words @image.created_at %>

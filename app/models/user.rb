@@ -7,6 +7,12 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :like_images, dependent: :destroy
   has_many :like_comments, dependent: :destroy
+  has_many :active_relationships, class_name: Relationship.name,
+    foreign_key: :follower_id, dependent: :destroy
+  has_many :passive_relationships, class_name: Relationship.name,
+    foreign_key: :followed_id, dependent: :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
 
   validates :email, presence: true, length: {maximum: 255},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
@@ -27,6 +33,24 @@ class User < ApplicationRecord
     def new_token
       SecureRandom.urlsafe_base64
     end
+  end
+
+  def feed
+    Image.images_feed(self).order_by_created_at
+ end
+
+  def follow other_user
+    following << other_user
+  end
+
+  # Unfollows a user.
+  def unfollow other_user
+    following.delete other_user
+  end
+
+  # Returns true if the current user is following the other user.
+  def following? other_user
+    following.include? other_user
   end
 
   def remember
